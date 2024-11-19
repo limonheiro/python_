@@ -31,8 +31,3 @@ def valores(size=2):
 
 if __name__ == "__main__":
     valores()
-    
-"""
-1.0 7.0
-5.0 9.0
-"""
