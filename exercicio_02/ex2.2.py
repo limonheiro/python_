@@ -13,7 +13,7 @@ def salario():
     HoursWork = int(input("Horas Trabalhada: "))
     Salary = HourSalary * HoursWork
     
-    print(f"NUMBER = {Number:}\nSALARY = U$ {Salary:.2f}")
+    print(f"NUMBER = {Number:}\nSALARY = UR$ {Salary:.2f}")
     
 if __name__ == "__main__":
     salario()
