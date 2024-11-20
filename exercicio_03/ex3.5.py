@@ -9,19 +9,19 @@ def verificar(notas, recuperacao):
     if not positivo:
         return [notas, recuperacao, "Nota(s) fora do intervalo"]
         
-    notas = mediaValor(notas)
+    media = mediaValor(notas)
     notaPassar = 5 if recuperacao else 7
     
     if not recuperacao:
-        print(f"Media: {notas:.1f}")
+        print(f"Media: {media:.1f}")
     
-    if notas >= notaPassar:
-        return [notas, recuperacao, "Aluno aprovado."]
-    elif notas < 5:
-        return [notas, recuperacao,"Aluno reprovado."]
+    if media >= notaPassar:
+        return [media, recuperacao, "Aluno aprovado."]
+    elif media < 5:
+        return [media, recuperacao,"Aluno reprovado."]
     else:
         recuperacao = True
-        return [notas, recuperacao,"Aluno em exame."]
+        return [media, recuperacao,"Aluno em exame."]
           
 def entrada():
     recuperacao = False
