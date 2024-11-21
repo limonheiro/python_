@@ -5,6 +5,7 @@ def mediaValor(notas):
 def verificar(notas, recuperacao):
     
     positivo = all([n >= 0 for n in notas])
+    mensagem = ''
     
     if not positivo:
         return [notas, recuperacao, "Nota(s) fora do intervalo"]
@@ -13,21 +14,20 @@ def verificar(notas, recuperacao):
     notaPassar = 5 if recuperacao else 7
     
     if not recuperacao:
-        print(f"Media: {media:.1f}")
+        mensagem += f"Media: {media:.1f}\n"
     
     if media >= notaPassar:
-        return [media, recuperacao, "Aluno aprovado."]
+        return [media, recuperacao, mensagem + "Aluno aprovado."]
     elif media < 5:
-        return [media, recuperacao,"Aluno reprovado."]
+        return [media, recuperacao, mensagem + "Aluno reprovado."]
     else:
         recuperacao = True
-        return [media, recuperacao,"Aluno em exame."]
-          
-def entrada():
+        return [media, recuperacao, mensagem + "Aluno em exame."]
+
+def verificarEntrada(notas):
     recuperacao = False
-    valores = list(map(float, input().split()))
-    media, recuperacao, mensagem = verificar(valores, recuperacao)
-    
+        
+    media, recuperacao, mensagem = verificar(notas, recuperacao)
     print(mensagem)
     
     if recuperacao:
@@ -35,7 +35,11 @@ def entrada():
         notasRecuperacao = [media,notaRecuperacao]
         mediaRecuperacao, recuperacao, mensagem = verificar(notasRecuperacao, recuperacao)
         print(mensagem)
-        print (f"Media final: {mediaRecuperacao:.1f}")      
+        print (f"Media final: {mediaRecuperacao:.1f}")          
+         
+def entrada():
+    notas = list(map(float, input().split()))
+    verificarEntrada(notas)
  
 if __name__ == "__main__":   
     entrada()
