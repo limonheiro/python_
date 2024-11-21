@@ -17,7 +17,9 @@ def novoSalario():
     salario = float(input("Salário: "))
     reajuste = reajusteSalarial(salario)
     ganho = salario * reajuste
-    print(f"Novo salario: {(salario + (ganho)):.2f}\nReajuste ganho: {ganho:.2f}\nEm percentual: {(reajuste*100):.0f} %")
+    print(f"""Novo salario: {(salario + (ganho)):.2f}
+Reajuste ganho: {ganho:.2f}
+Em percentual: {(reajuste*100):.0f} %""")
 
 if __name__ == "__main__":
     novoSalario()
