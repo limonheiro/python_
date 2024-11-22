@@ -1,7 +1,8 @@
-def mediaValor(notas, recuperacao):
+def mediaValor(notas, recuperacao, pesos=[2,3,4,1]):
     media = len(notas)
-    if not recuperacao:
-        notas = [notas[0]*2, notas[1]*3, notas[2]*4, notas[3]*1]
+    
+    if recuperacao:
+        notas =[n*p for n,p in zip(notas,pesos)]
         media = 10
         
     totalSoma = sum(notas)
