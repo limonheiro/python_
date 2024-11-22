@@ -1,7 +1,7 @@
 def verificarDivisao(x,y):
     try:
         return x/y
-    except:
+    except ZeroDivisionError:
         return 'divisao impossivel'
 
 def valores(n):

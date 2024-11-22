@@ -1,8 +1,23 @@
 def fibonacci(n):
-    if n == 0:
+    if not 0 < n < 46:
         return 0
     
-    return fibonacci(n-1)
+    soma = 0
+    anterior = 0
+    listSequenc = [0]
+    
+    for n in range(n):
+        
+        if n <=2 :
+            soma = 1
+            anterior = 1
+        else:    
+            soma = anterior + soma
+        
+        listSequenc.append(soma)
+    
+    print(listSequenc)
 
-n = int(input())
-print(fibonacci(n))
+if __name__ == "__main__":
+    n = int(input())
+    fibonacci(n)
