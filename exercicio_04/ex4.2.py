@@ -12,5 +12,5 @@ with open('entrada.txt', 'r') as f:
         number = f.readline()
         pos +=1
         
-    print(maxNumber, posMax)
+    print(maxNumber, posMax, sep='\n')
         
