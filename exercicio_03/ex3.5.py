@@ -1,6 +1,11 @@
-def mediaValor(notas):
+def mediaValor(notas, recuperacao):
+    media = len(notas)
+    if not recuperacao:
+        notas = [notas[0]*2, notas[1]*3, notas[2]*4, notas[3]*1]
+        media = 10
+        
     totalSoma = sum(notas)
-    return totalSoma / len(notas)
+    return totalSoma / media
 
 def verificar(notas, recuperacao):
     
@@ -10,7 +15,7 @@ def verificar(notas, recuperacao):
     if not positivo:
         return [notas, recuperacao, "Nota(s) fora do intervalo"]
         
-    media = mediaValor(notas)
+    media = mediaValor(notas, recuperacao)
     notaPassar = 5 if recuperacao else 7
     
     if not recuperacao:
