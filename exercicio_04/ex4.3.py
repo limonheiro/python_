@@ -1,7 +1,7 @@
-def somaImpar(x,y):
+def somaImpar(x):
     sum=0
-    minValue= min(x,y)
-    maxValue = max(x,y)
+    x.sort()
+    minValue, maxValue = x
     
     for i in range(minValue,maxValue):
         if i%2 == 1:
@@ -11,8 +11,8 @@ def somaImpar(x,y):
 def escreverPontos(n):
     entreImpares = []
     for _ in range(n):
-        x, y = map(int, input().split())    
-        entreImpares.append(somaImpar(x,y))        
+        x = list(map(int, input().split()))    
+        entreImpares.append(somaImpar(x))        
     
     for i in entreImpares:
         print (i)
