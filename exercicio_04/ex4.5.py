@@ -1,4 +1,8 @@
-lista = [int(input()) for _ in range(2)]
+try:
+    lista = [int(input()) for _ in range(2)]
+except (ValueError, NameError):
+    print("Insira numero inteiro")
+    
 lista.sort()
 minN,maxN = lista
 
